@@ -3,11 +3,12 @@ import getProducts from "./getProducts.js";
 export default function renderProducts() {
     let products = getProducts();
     let grid = document.querySelector(".products-grid");
-    grid.innerHTML='';
+    grid.innerHTML = "";
     for (let key in products) {
         let item = products[key][1];
         let product = document.createElement("div");
         product.classList.add("product");
+        product.id = item.productId;
 
         let image = document.createElement("img");
         image.classList.add("product-image");
@@ -38,11 +39,3 @@ export default function renderProducts() {
         grid.appendChild(product);
     }
 }
-
-// <div class="product-details">
-//     <h3 class="product-name">kjhjkljklf</h3>
-//     <p class="product-description">
-//         desdfhsffsdhfdfsjkfhsjfhdkfjhsgjkl;hgsjklhgskjghgkjh
-//     </p>
-//     <div class="product-price">$123</div>
-// </div>;
