@@ -2,15 +2,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: var(--padding-md);
     border-bottom: 2px solid gray;
 }
 
 .create-button {
     background-color: var(--color-button-blue);
     color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 0.2rem;
+    padding: var(--padding-sm) var(--padding-md);
+    border-radius: var(--padding-xs);
 }
 
 @media (max-width: 350px) {
@@ -19,6 +19,6 @@
     }
 
     .create-button {
-        padding: 0.2rem 0.5rem;
+        padding: var(--padding-xs) var(--padding-sm);
     }
 }

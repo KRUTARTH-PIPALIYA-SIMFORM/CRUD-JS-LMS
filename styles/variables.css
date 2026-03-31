@@ -1,3 +1,6 @@
 :root {
     --color-button-blue: #0052cc;
+    --padding-md : 1rem;
+    --padding-sm :0.5rem;
+    --padding-xs :0.2rem;
 }
