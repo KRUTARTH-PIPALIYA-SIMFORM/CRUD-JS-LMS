@@ -1,9 +1,8 @@
+import selectSortevent from "./eventHandlers/selectSortEvent.js";
 import renderProducts from "./renderProducts.js";
+
+selectSortevent()
 
 renderProducts();
 
-let select = document.getElementById("sort-attributes");
-select.addEventListener("change", () => {
-    console.log("selected");
-    renderProducts();
-});
+
