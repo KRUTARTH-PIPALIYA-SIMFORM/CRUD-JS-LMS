@@ -2,12 +2,10 @@ import getProducts from "./getProducts.js";
 
 export default function renderProducts() {
     let products = getProducts();
-    console.log(products);
     let grid = document.querySelector(".products-grid");
-
+    grid.innerHTML='';
     for (let key in products) {
-        let item = products[key];
-        console.log(item);
+        let item = products[key][1];
         let product = document.createElement("div");
         product.classList.add("product");
 
