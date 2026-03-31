@@ -1,0 +1,24 @@
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 2px solid gray;
+}
+
+.create-button {
+    background-color: var(--color-button-blue);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.2rem;
+}
+
+@media (max-width: 350px) {
+    .main-header-heading {
+        font-size: larger;
+    }
+
+    .create-button {
+        padding: 0.2rem 0.5rem;
+    }
+}
