@@ -1,3 +1,4 @@
+import createButton from "./createButton.js";
 import filterSubmit from "./filterSubmit.js";
 import removeRightClickEvent from "./removeRightClickEvent.js";
 import rightclickEvent from "./rightClickEvent.js";
@@ -8,4 +9,5 @@ export function starteventHandlers() {
     selectSortevent();
     removeRightClickEvent();
     filterSubmit();
+    createButton();
 }

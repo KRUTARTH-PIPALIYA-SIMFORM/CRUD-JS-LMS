@@ -14,7 +14,6 @@ export default function formSubmit() {
                 if (elem.classList[0] !== "form-input") continue;
                 elem.value = product[elem.name];
             }
-            console.log(inputs.value);
         }
     }
     form.addEventListener("submit", (e) => {
