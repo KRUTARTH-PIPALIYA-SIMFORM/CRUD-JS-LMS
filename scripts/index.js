@@ -1,7 +1,7 @@
-import selectSortevent from "./eventHandlers/selectSortEvent.js";
+import { starteventHandlers } from "./eventHandlers/index.js";
 import renderProducts from "./renderProducts.js";
 
-selectSortevent()
+starteventHandlers();
 
 renderProducts();
 
