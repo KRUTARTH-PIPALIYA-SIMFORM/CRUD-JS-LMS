@@ -1,8 +1,12 @@
 export default function getProducts() {
     try {
         const json = localStorage.getItem("products");
+        if (json === null) {
+            return [];
+        }
         const products = JSON.parse(json);
-        let value = document.querySelector(".sort-attributes").value;
+        let value = document.querySelector(".sort-attributes")?.value;
+        if (!value) return products;
         let convertedArray = Object.entries(products ?? []);
 
         convertedArray.sort((a, b) => {
