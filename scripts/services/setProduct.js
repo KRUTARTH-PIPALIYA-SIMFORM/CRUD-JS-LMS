@@ -4,6 +4,7 @@ import navigate from "./navigate.js";
 export default function setProduct(product = {}) {
     let edit = false;
     edit = window.location.href.slice(11)?.length > 0 ?? false;
+    console.log(edit);
     let products = getProducts();
     if (!edit && products.hasOwnProperty(product.productId)) {
         alert("Product with same productId already there");
