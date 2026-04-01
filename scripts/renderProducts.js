@@ -5,7 +5,7 @@ export default function renderProducts() {
     let grid = document.querySelector(".products-grid");
     grid.innerHTML = "";
     for (let key in products) {
-        let item = products[key][1];
+        let item = products[key];
         let product = document.createElement("div");
         product.classList.add("product");
         product.setAttribute("productId", item.productId);
