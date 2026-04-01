@@ -31,6 +31,42 @@
                         <option value="price">price</option>
                     </select>
                 </div>
+                <div class="filter-wrapper">
+                    <p class="filter-wrapper-p">Filter By :</p>
+                    <form id="filter-form">
+                        <div class="input-label-wrapper">
+                            <label for="filter-name"> Name </label>
+                            <input
+                                type="text"
+                                id="filter-name"
+                                class="filter-input"
+                            />
+                        </div>
+                        <div class="input-label-wrapper">
+                            <label for="filter-price-lowerbound"
+                                >Lower-price</label
+                            >
+                            <input
+                                type="number"
+                                id="filter-price-lowerbound"
+                                class="filter-input"
+                            />
+                        </div>
+
+                        <div class="input-label-wrapper">
+                            <label for="filter-price-upperbound"
+                                >Upper-price</label
+                            >
+                            <input
+                                type="number"
+                                id="filter-price-upperbound"
+                                class="filter-input"
+                            />
+                        </div>
+
+                        <button class="filter-submit">Filter</button>
+                    </form>
+                </div>
             </div>
             <div class="products-grid">
                 <div class="product">
