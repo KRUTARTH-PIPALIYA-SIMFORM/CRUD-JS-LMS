@@ -2,10 +2,11 @@ import getProducts from "../getProducts.js";
 import navigate from "./navigate.js";
 
 export default function setProduct(product = {}) {
-    let edit = false;
-    edit = window.location.href.slice(11)?.length > 0 ?? false;
-    console.log(edit);
+    const urlParams = new URLSearchParams(window.location.search);
+    let productId = urlParams.get("productId");
+    let edit = Boolean(productId);
     let products = getProducts();
+    console.log(products.hasOwnProperty(product.productId));
     if (!edit && products.hasOwnProperty(product.productId)) {
         alert("Product with same productId already there");
     } else {

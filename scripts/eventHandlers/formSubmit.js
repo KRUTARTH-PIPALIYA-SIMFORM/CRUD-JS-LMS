@@ -3,8 +3,10 @@ import setProduct from "../services/setProduct.js";
 
 export default function formSubmit() {
     let form = document.getElementById("product-form");
-    let productId = window.location.search.slice(11);
-    if (productId.length) {
+    const urlParams = new URLSearchParams(window.location.search);
+    let productId = urlParams.get("productId");
+    console.log("this is", productId);
+    if (productId !== null && productId.length) {
         let products = getProducts();
         if (!products[productId]) alert("Product Doesn't exist");
         else {
