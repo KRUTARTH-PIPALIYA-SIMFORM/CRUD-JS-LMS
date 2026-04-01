@@ -5,8 +5,8 @@ export default function rightclickEvent() {
 
         if (e.target.getAttribute("productid")) {
             let menu = document.querySelector(".rightclick-menu");
-            menu.style.left = e.clientX + "px";
-            menu.style.top = e.clientY + "px";
+            menu.style.left = e.pageX + "px";
+            menu.style.top = e.pageY + "px";
             menu.style.display = "flex";
         }
     });
