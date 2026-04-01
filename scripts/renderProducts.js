@@ -1,4 +1,5 @@
 import getProducts from "./getProducts.js";
+import validateProduct from "./services/validateProduct.js";
 
 export default function renderProducts() {
     let products = getProducts();
@@ -6,6 +7,8 @@ export default function renderProducts() {
     grid.innerHTML = "";
     for (let key in products) {
         let item = products[key];
+
+        if (!validateProduct(item)) continue;
         let product = document.createElement("div");
         product.classList.add("product");
         product.setAttribute("productId", item.productId);
