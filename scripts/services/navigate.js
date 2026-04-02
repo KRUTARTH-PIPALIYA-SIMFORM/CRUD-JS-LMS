@@ -8,7 +8,8 @@ export default async function navigate(path = "/", addHistory = true) {
     if (path.includes("/create")) {
         const res = await fetch("./create.html");
         const html = await res.text();
-        document.querySelector("body").innerHTML = html;
+        document.querySelector(".app").innerHTML = html;
+
         createInit();
     } else if (path.includes("./index") || path == "/") {
         const res = await fetch("./index.html");

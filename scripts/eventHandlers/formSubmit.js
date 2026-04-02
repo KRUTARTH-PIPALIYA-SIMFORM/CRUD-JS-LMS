@@ -3,7 +3,6 @@ import isProductIdRepeating from "../services/isProductIdRepeating.js";
 import setProduct from "../services/setProduct.js";
 
 export default function createInit() {
-
     startFormEvent();
     const urlParams = new URLSearchParams(window.location.search);
     let productId = urlParams.get("productId");
@@ -19,7 +18,7 @@ export default function createInit() {
                 return false;
             });
             let product = filtered[0];
-            console.log(product)
+            console.log(product);
             let inputs = form.children;
             for (let elem of inputs) {
                 if (elem.classList[0] !== "form-input") continue;
@@ -29,18 +28,13 @@ export default function createInit() {
     }
 }
 
-let eventStarted = false;
-
 function startFormEvent() {
-    if (!eventStarted) {
-        eventStarted = true;
-        let form = document.getElementById("product-form");
-        console.log("form is", form);
-        form.addEventListener("submit", (e) => {
-            console.log("prevented");
-            e.preventDefault();
-            let formData = new FormData(e.target);
-            setProduct(Object.fromEntries(formData.entries()));
-        });
-    }
+    let form = document.getElementById("product-form");
+    console.log("form is", form);
+    form.addEventListener("submit", (e) => {
+        console.log("prevented");
+        e.preventDefault();
+        let formData = new FormData(e.target);
+        setProduct(Object.fromEntries(formData.entries()));
+    });
 }
