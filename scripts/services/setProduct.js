@@ -1,4 +1,5 @@
 import getProducts from "../getProducts.js";
+import isProductIdRepeating from "./isProductIdRepeating.js";
 import navigate from "./navigate.js";
 
 export default function setProduct(product = {}) {
@@ -6,15 +7,33 @@ export default function setProduct(product = {}) {
     let productId = urlParams.get("productId");
     let edit = Boolean(productId);
     let products = getProducts();
-    console.log(products.hasOwnProperty(product.productId));
-    if (!edit && products.hasOwnProperty(product.productId)) {
+    console.log(products);
+    if (!edit && isProductIdRepeating(productId, products)) {
         alert("Product with same productId already there");
     } else {
-        products[String(product.productId)] = product;
-        products = JSON.stringify(products);
-        localStorage.setItem("products", products);
-        if (edit) alert("Product Edited Successfully");
-        else alert("Product Created Successfully");
+        if (edit) {
+            if (product.productId != productId) {
+                alert("You changed the productId, Try again");
+            } 
+            let flag = false;
+            for (let i = 0; i < products.length; i++) {
+                if (product.productId == products[i].productId) {
+                    products[i] = product;
+                    flag = true;
+                    break;
+                }
+            }
+            if(flag){
+                products = JSON.stringify(products);
+                localStorage.setItem("products", products);
+                alert("Product Edited Successfully");
+            }
+        } else {
+            products.push(product);
+            products = JSON.stringify(products);
+            localStorage.setItem("products", products);
+            alert("Product Created Successfully");
+        }
         navigate("./");
     }
 }
