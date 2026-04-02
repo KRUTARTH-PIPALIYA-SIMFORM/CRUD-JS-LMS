@@ -6,9 +6,10 @@ export default function setProduct(product = {}) {
     const urlParams = new URLSearchParams(window.location.search);
     let productId = urlParams.get("productId");
     let edit = Boolean(productId);
+    console.log(edit);
     let products = getProducts();
     console.log(products);
-    if (!edit && isProductIdRepeating(productId, products)) {
+    if (!edit && isProductIdRepeating(product.productId, products)) {
         alert("Product with same productId already there");
     } else {
         if (edit) {
