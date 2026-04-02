@@ -6,7 +6,6 @@ export default function getProducts() {
             return [];
         }
         const products = JSON.parse(json);
-        console.log(products)
         let value = document.querySelector(".sort-attributes")?.value;
         if (!value) return products;
         products.sort((a, b) => {

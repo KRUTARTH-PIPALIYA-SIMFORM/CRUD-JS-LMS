@@ -6,9 +6,9 @@ export default function formSubmit() {
     let form = document.getElementById("product-form");
     const urlParams = new URLSearchParams(window.location.search);
     let productId = urlParams.get("productId");
-    if (productId !== null && productId.length) {
+    if (productId != null) {
         let products = getProducts();
-        if (isProductIdRepeating(productId, products)) alert("Product Doesn't exist here");
+        if (!isProductIdRepeating(productId, products)) alert("Product Doesn't exist here");
         else {
             let filtered = products.filter((item) => {
                 if (item.productId == productId)
