@@ -1,5 +1,7 @@
 export default function removeRightClickEvent() {
     document.addEventListener("click", () => {
-        document.querySelector(".rightclick-menu").style.display = "none";
+        let ele = document.querySelector(".rightclick-menu")
+        if (ele)
+            ele.style.display = "none";
     });
 }

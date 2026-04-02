@@ -33,6 +33,6 @@ export default function setProduct(product = {}) {
             localStorage.setItem("products", products);
             alert("Product Created Successfully");
         }
-        navigate("./");
+        navigate("/");
     }
 }
