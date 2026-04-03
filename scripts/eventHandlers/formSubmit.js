@@ -1,9 +1,16 @@
 import getProducts from "../getProducts.js";
 import isProductIdRepeating from "../services/isProductIdRepeating.js";
+import navigate from "../services/navigate.js";
 import setProduct from "../services/setProduct.js";
 
+console.log("DOM loaded from outside");
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOM loaded");
+
+    navigate(window.location.pathname);
+});
 export default function createInit() {
-    console.log('start')
+    console.log("start");
     startFormEvent();
     addImagePreviewEvent();
     const urlParams = new URLSearchParams(window.location.search);
@@ -42,11 +49,13 @@ function startFormEvent() {
 }
 
 function addImagePreviewEvent() {
-    console.log('hi')
-    document.getElementById('product-image-url').addEventListener('change', imageOnchange)
+    console.log("hi");
+    document
+        .getElementById("product-image-url")
+        .addEventListener("change", imageOnchange);
 }
 
 function imageOnchange(e) {
-    let img = document.querySelector('.preview-image');
-    img.setAttribute('src', e.target.value)
+    let img = document.querySelector(".preview-image");
+    img.setAttribute("src", e.target.value);
 }
