@@ -15,11 +15,8 @@ export default function renderProducts() {
 
         let image = document.createElement("img");
         image.classList.add("product-image");
-        image.setAttribute(
-            "src",
-            `./assets/productImages/${item.productId}.png`,
-        );
-        image.setAttribute("alt", `.product${item.productId}`);
+        image.setAttribute("src", item.productImageURL);
+        image.setAttribute("alt", item.productImageURL);
         image.setAttribute("productId", item.productId);
         product.appendChild(image);
 

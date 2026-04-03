@@ -3,7 +3,9 @@ import isProductIdRepeating from "../services/isProductIdRepeating.js";
 import setProduct from "../services/setProduct.js";
 
 export default function createInit() {
+    console.log('start')
     startFormEvent();
+    addImagePreviewEvent();
     const urlParams = new URLSearchParams(window.location.search);
     let productId = urlParams.get("productId");
     if (productId != null) {
@@ -37,4 +39,14 @@ function startFormEvent() {
         let formData = new FormData(e.target);
         setProduct(Object.fromEntries(formData.entries()));
     });
+}
+
+function addImagePreviewEvent() {
+    console.log('hi')
+    document.getElementById('product-image-url').addEventListener('change', imageOnchange)
+}
+
+function imageOnchange(e) {
+    let img = document.querySelector('.preview-image');
+    img.setAttribute('src', e.target.value)
 }
