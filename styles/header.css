@@ -1,0 +1,24 @@
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--padding-md);
+    border-bottom: 2px solid gray;
+}
+
+.create-button {
+    background-color: var(--color-button-blue);
+    color: white;
+    padding: var(--padding-sm) var(--padding-md);
+    border-radius: var(--padding-xs);
+}
+
+@media (max-width: 350px) {
+    .main-header-heading {
+        font-size: larger;
+    }
+
+    .create-button {
+        padding: var(--padding-xs) var(--padding-sm);
+    }
+}

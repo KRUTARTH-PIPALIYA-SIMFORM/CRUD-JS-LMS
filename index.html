@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="Krutarth Pipaliya" />
+        <meta name="description" content="Basic calculator" />
+
+        <link rel="stylesheet" href="styles/index.css" />
+        <script type="module" src="./scripts/index.js" defer></script>
+        <title>Product Management CRUD</title>
+    </head>
+    <body>
+        <div class="app">
+            <header class="main-header">
+                <h1 class="main-header-heading">Product Management CRUD</h1>
+                <button class="create-button">Create</button>
+            </header>
+            <main>
+                <div class="choice-option">
+                    <div class="sort-wrapper">
+                        <label class="sort-wrapper-name" for="sort-attributes"
+                            >Sort By:</label
+                        >
+                        <select
+                            name="sort-attributes"
+                            class="sort-attributes"
+                            id="sort-attributes"
+                        >
+                            <option value="productName">Name</option>
+                            <option value="productId">productId</option>
+                            <option value="price">price</option>
+                        </select>
+                    </div>
+                    <div class="filter-wrapper">
+                        <p class="filter-wrapper-p">Filter By :</p>
+                        <form id="filter-form">
+                            <div class="input-label-wrapper">
+                                <label for="filter-name"> Name </label>
+                                <input
+                                    type="text"
+                                    id="filter-name"
+                                    class="filter-input"
+                                    value=""
+                                />
+                            </div>
+                            <div class="input-label-wrapper">
+                                <label for="filter-price-lowerbound"
+                                    >Lower-price</label
+                                >
+                                <input
+                                    type="number"
+                                    id="filter-price-lowerbound"
+                                    class="filter-input"
+                                    value="0"
+                                />
+                            </div>
+
+                            <div class="input-label-wrapper">
+                                <label for="filter-price-upperbound"
+                                    >Upper-price</label
+                                >
+                                <input
+                                    type="number"
+                                    id="filter-price-upperbound"
+                                    class="filter-input"
+                                    value="100000000"
+                                />
+                            </div>
+                            <button class="filter-submit">Filter</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="products-grid"></div>
+            </main>
+            <div class="rightclick-menu">
+                <header class="rightclick-menu-header">Options</header>
+                <ul class="rightclick-menu-list">
+                    <li class="rightclick-menu-item">
+                        <button
+                            autofocus
+                            class="rightclick-menu-item-button edit"
+                        >
+                            Edit
+                        </button>
+                    </li>
+                    <li class="rightclick-menu-item">
+                        <button
+                            autofocus
+                            class="rightclick-menu-item-button delete"
+                        >
+                            Delete
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
