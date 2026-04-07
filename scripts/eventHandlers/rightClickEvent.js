@@ -1,5 +1,6 @@
 export default function rightclickEvent() {
     let grid = document.querySelector(".products-grid");
+
     grid.addEventListener("contextmenu", (e) => {
         e.preventDefault();
 

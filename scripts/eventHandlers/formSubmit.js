@@ -3,14 +3,11 @@ import isProductIdRepeating from "../services/isProductIdRepeating.js";
 import navigate from "../services/navigate.js";
 import setProduct from "../services/setProduct.js";
 
-console.log("DOM loaded from outside");
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("DOM loaded");
-
-    navigate(window.location.pathname);
+    navigate(window.location.pathname + window.location.search, false);
 });
+
 export default function createInit() {
-    console.log("start");
     startFormEvent();
     addImagePreviewEvent();
     const urlParams = new URLSearchParams(window.location.search);
@@ -27,19 +24,21 @@ export default function createInit() {
                 return false;
             });
             let product = filtered[0];
-            console.log(product);
             let inputs = form.children;
             for (let elem of inputs) {
                 if (elem.classList[0] !== "form-input") continue;
                 elem.value = product[elem.name];
             }
+            document
+                .querySelector(".preview-image")
+                .setAttribute("src", product.productImageURL);
         }
     }
 }
 
 function startFormEvent() {
     let form = document.getElementById("product-form");
-    console.log("form is", form);
+
     form.addEventListener("submit", (e) => {
         console.log("prevented");
         e.preventDefault();
@@ -49,7 +48,6 @@ function startFormEvent() {
 }
 
 function addImagePreviewEvent() {
-    console.log("hi");
     document
         .getElementById("product-image-url")
         .addEventListener("change", imageOnchange);
